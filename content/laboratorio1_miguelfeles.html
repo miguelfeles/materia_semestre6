@@ -1,0 +1,1566 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Intro &#8212; DeepLearning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/laboratorio1_miguelfeles';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="chapter1.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DeepLearning</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="chapter1.html">
+                    intro
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/miguelfeles/materia_deeplearning" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/miguelfeles/materia_deeplearning/edit/master/DeepLearning/content/laboratorio1_miguelfeles.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/miguelfeles/materia_deeplearning/issues/new?title=Issue%20on%20page%20%2Fcontent/laboratorio1_miguelfeles.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/laboratorio1_miguelfeles.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Intro</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 4</title>
+    <style>
+        body {
+            font-family: 'OPTIMA', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1B2E3C;
+        }
+        header {
+            font-family: 'OPTIMA', serif;
+            background-color: #1B2E3C;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        main {
+            font-family: 'OPTIMA', serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-family: 'OPTIMA', serif;
+            margin: 0;
+            color:white;
+        }
+        h2 {
+            font-family: 'OPTIMA', serif;
+            margin: 0;
+            text-align: center;
+        }
+        h3,h5 {
+            font-family: 'OPTIMA', serif;
+            margin: 0;
+            text-align: center;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            color: #1B2E3C;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Laboratorio 1</h1>
+    </header>
+    <main>
+        <section>
+            <h3>Deep Learning</h3>
+            <h3>Miguel Feles</h3>
+            <h3>Docente: Albert Montenegro</h3>
+            <br>
+            <h5>Pregrado en Ciencia de Datos</h5>
+            <h5>Universidad Externado de Colombia</h5>
+        </section>
+            </main>
+    <footer>
+        <p>&copy; 2024 Universidad Externado de Colombia - Ciencia de Datos</p>
+    </footer>
+</body>
+</html>
+<section class="tex2jax_ignore mathjax_ignore" id="intro">
+<h1>Intro<a class="headerlink" href="#intro" title="Link to this heading">#</a></h1>
+<h3 style = "font-family: 'OPTIMA', serif;"> <b> Importaciones </b> </h3>
+<p style = "font-family: 'OPTIMA', serif;">
+Vamos a empezar con nuestras importaciones. Aquí importamos <i>TensorFlow</i> y lo llamamos tf para facilitar su uso.<br>El paquete para definir una red neuronal como un conjunto de capas secuenciales se llama <i>Keras</i>, así que también lo importamos.
+</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">EarlyStopping</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">regularizers</span>
+
+<span class="c1">#Keras es la arquitectura y esqueleto de la red.</span>
+<span class="c1">#Tensorflow se encarga de las cuentas a lo largo de la red.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h3 style = "font-family: 'OPTIMA', serif;"> <b> Funciones necesarias </b> </h3>
+<p style = "font-family: 'OPTIMA', serif;">
+Estas son las funciones necesarias para realizar una interpretación y entendimiento adecuado de los resultados en el entrenamiento del modelo de red neuronal con solo una capa.
+</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">graficas</span><span class="p">(</span><span class="n">train_loss</span><span class="p">,</span> <span class="n">train_loss_stopping</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta función recibe tres parametros:</span>
+<span class="sd">        funcion1: es una función que realice un grafico de puntos en matplotlib que irá en el lado izquierdo de la gráfica.</span>
+<span class="sd">        funcion2: esta función recibe un gráfico de alguna función que se desee graficar en matplotlib.</span>
+<span class="sd">        train_loss: esta función recibe los resultados la perdida en el entrenamiento de ,os datos,</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_loss</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Loss&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Model Loss&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_loss_stopping</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Loss&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Model Loss - Stopping&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">funciones</span><span class="p">(</span><span class="n">funcion1</span><span class="p">,</span> <span class="n">funcion2</span><span class="p">,</span> <span class="n">título</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta función recibe tres parametros:</span>
+<span class="sd">        funcion1: es una función que realice un grafico de puntos en matplotlib que irá en el lado izquierdo de la gráfica.</span>
+<span class="sd">        funcion2: esta función recibe un gráfico de alguna función que se desee graficar en matplotlib.</span>
+<span class="sd">        train_loss: esta función recibe los resultados la perdida en el entrenamiento de ,os datos,</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">funcion1</span><span class="p">(</span><span class="n">ax1</span><span class="p">)</span>
+    <span class="n">funcion2</span><span class="p">(</span><span class="n">ax1</span><span class="p">)</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">título</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h3 style = "font-family: 'OPTIMA', serif;"> <b> Esquema de modelos </b> </h3>
+<p style = "font-family: 'OPTIMA', serif;">
+Estos son los modelos utilizados en las tres pruebas diferentes, los modelos están separados para ponerlos a prueba con datos diferentes. No obstante, arquitectura del modelo en los tres casos es la misma.
+</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo_lineal</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+<span class="n">modelo_lineal</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+
+<span class="n">modelo_cuadratico</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+<span class="n">modelo_cuadratico</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+
+<span class="n">modelo_circular</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+<span class="n">modelo_circular</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/felesiu/miniforge3/envs/deeplearning/lib/python3.11/site-packages/keras/src/layers/core/dense.py:87: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+</pre></div>
+</div>
+</div>
+</div>
+<h3 style = "font-family: 'OPTIMA', serif;"> <b>Punto 1: Generar Conjunto de Datos </b> </h3>
+<li style = "font-family: 'OPTIMA', serif;">
+Generar un conjunto de 20 datos que siga una relación lineal con la adición de ruido gaussiano. 
+</li><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_lineal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">y_lineal</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x_lineal</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="n">x_continuo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">y_continuo</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x_lineal</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">funciones</span><span class="p">(</span><span class="k">lambda</span> <span class="n">ax</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_lineal</span><span class="p">,</span> <span class="n">y_lineal</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Puntos&#39;</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">ax</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_continuo</span><span class="p">,</span> <span class="n">y_continuo</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Función cuadrática&#39;</span><span class="p">),</span> <span class="s1">&#39;Función Lineal con Ruido Gaussiano&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d6dcacb724b54b0b1fc598c76cfa9ae9b0759324fc44ba1a682ef3b19a63824a.png" src="../_images/d6dcacb724b54b0b1fc598c76cfa9ae9b0759324fc44ba1a682ef3b19a63824a.png" />
+</div>
+</div>
+<li style = "font-family: 'OPTIMA', serif;">
+Generar un conjunto de 20 datos que sigan una función parabólica.  
+</li><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_cuadratico</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">y_cuadratico</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_cuadratico</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x_cuadratico</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> 
+
+<span class="n">x_continuo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">y_continuo</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_continuo</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x_continuo</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">funciones</span><span class="p">(</span><span class="k">lambda</span> <span class="n">ax</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_cuadratico</span><span class="p">,</span> <span class="n">y_cuadratico</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Puntos&#39;</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">ax</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_continuo</span><span class="p">,</span> <span class="n">y_continuo</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Función cuadrática&#39;</span><span class="p">),</span> <span class="s1">&#39;Función Parabólica&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a188fc9620b2a07693d74a191f5e4869d8fc7c04ea34af6d2b41e4bbf4932fb0.png" src="../_images/a188fc9620b2a07693d74a191f5e4869d8fc7c04ea34af6d2b41e4bbf4932fb0.png" />
+</div>
+</div>
+<li style = "font-family: 'OPTIMA', serif;">
+Generar un conjunto de 20 datos que sigan una distribución circular.  
+</li><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># Generar 20 ángulos equidistantes entre 0 y 2π</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Radio del círculo</span>
+<span class="n">x_circular</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> 
+<span class="n">y_circular</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+
+<span class="n">circle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">funciones</span><span class="p">(</span><span class="k">lambda</span> <span class="n">ax</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_circular</span><span class="p">,</span> <span class="n">y_circular</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Puntos&#39;</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">ax</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle</span><span class="p">),</span> <span class="s1">&#39;Distribución Circular&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b0321d30e6e267d43989b841aeb38dc7fae5018c912391495c9139b5d196ab10.png" src="../_images/b0321d30e6e267d43989b841aeb38dc7fae5018c912391495c9139b5d196ab10.png" />
+</div>
+</div>
+<h3 style = "font-family: 'OPTIMA', serif;"><b> Punto 2: Entrenamiento y Evaluación </b></h3>
+<li style = "font-family: 'OPTIMA', serif; font-size:16px;">
+¿Cuál es el número mínimo de épocas necesarias para un ajuste adecuado en cada caso?
+</li><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">early_stopping</span> <span class="o">=</span> <span class="n">EarlyStopping</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;loss&#39;</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">restore_best_weights</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Método 1 </span>
+<span class="n">modelo_lineal_ajustado</span> <span class="o">=</span> <span class="n">modelo_lineal</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_lineal</span><span class="p">,</span> <span class="n">y_lineal</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">train_loss</span> <span class="o">=</span> <span class="n">modelo_lineal_ajustado</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Los primeros resultados del modelo sin Early stop son&quot;</span><span class="p">,</span> <span class="n">train_loss</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">])</span>
+
+<span class="c1">#Método 2</span>
+<span class="n">modelo_lineal_ajustado_stopping</span> <span class="o">=</span> <span class="n">modelo_lineal</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_lineal</span><span class="p">,</span> <span class="n">y_lineal</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">])</span>
+<span class="n">train_loss_stopping</span> <span class="o">=</span> <span class="n">modelo_lineal_ajustado_stopping</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El número de épocas enconstradas cuando el cambio se vuelve mínimo es&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loss_stopping</span><span class="p">),</span> <span class="s2">&quot;Sus resultados son&quot;</span><span class="p">,</span> <span class="n">train_loss_stopping</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">train_loss_stopping</span><span class="p">)])</span>
+
+<span class="n">graficas</span><span class="p">(</span><span class="n">train_loss</span> <span class="o">=</span> <span class="n">train_loss</span><span class="p">,</span> <span class="n">train_loss_stopping</span> <span class="o">=</span> <span class="n">train_loss_stopping</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Los primeros resultados del modelo sin Early stop son [489.24786376953125, 45.01641082763672, 4.752358436584473, 1.1029260158538818, 0.7721506357192993, 0.7421702146530151, 0.7394527196884155, 0.7392066121101379, 0.7391840815544128, 0.7391822934150696, 0.7391820549964905, 0.7391819357872009, 0.7391824722290039, 0.7391818165779114, 0.7391821146011353, 0.7391821146011353, 0.7391821146011353, 0.73918217420578, 0.7391820549964905, 0.7391819953918457, 0.7391821146011353, 0.7391817569732666, 0.7391818761825562, 0.7391819357872009, 0.7391818761825562, 0.7391818761825562, 0.7391818761825562, 0.7391818761825562, 0.7391818761825562, 0.7391818165779114, 0.7391818165779114, 0.7391818165779114, 0.7391819953918457, 0.7391819953918457, 0.7391821146011353, 0.7391819953918457, 0.7391818761825562, 0.7391816973686218, 0.7391817569732666, 0.7391816973686218, 0.7391818165779114, 0.7391818761825562, 0.7391818761825562, 0.739181637763977, 0.7391818165779114, 0.7391819953918457, 0.7391818165779114, 0.7391816973686218, 0.7391818165779114, 0.7391817569732666]
+El número de épocas enconstradas cuando el cambio se vuelve mínimo es 13 Sus resultados son [0.739181399345398, 0.739181399345398, 0.7391813397407532, 0.7391813397407532, 0.7391813397407532, 0.7391813397407532, 0.7391814589500427, 0.739181399345398, 0.739181399345398, 0.739181399345398, 0.7391813397407532, 0.7391814589500427, 0.739181399345398]
+</pre></div>
+</div>
+<img alt="../_images/16a8b72ae83d8309bed8cde08f60693690e85b2e034adbfc2dffdddf17f00cc0.png" src="../_images/16a8b72ae83d8309bed8cde08f60693690e85b2e034adbfc2dffdddf17f00cc0.png" />
+</div>
+</div>
+<p style = "font-family: 'OPTIMA', serif;">
+En este caso, se determinará el número óptimo de la red evaluando la relación entre el número de épocas y el cambio en la función de pérdida. Este procedimiento se aplicará tomando 500 épocas como referencia para observar esta relación. La hipótesis es que, al ser la función lineal, se necesitarán menos épocas. Visualmente, se observa que a partir de la época 300 la pérdida tuvo una variación mucho menor, por lo que este punto podría ser un buen ajuste.
+<br>
+En el segundo método se utilizará el método de "Early Stopping" con una espera de 10 iteraciones, como se propone en TensorFlow. Este método evalúa el cambio punto a punto entre el número de épocas y el aprendizaje, y detiene el entrenamiento cuando se detecta un descenso que supere un cierto umbral. Este enfoque tiene la ventaja de poder determinar numéricamente el número óptimo de épocas. En este caso, el número mínimo de épocas determinado es 10, lo que indica que el ajuste de la función fue rápido y que el error dejó de variar significativamente.
+</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Método 1</span>
+<span class="n">modelo_cuadratico_ajustado</span> <span class="o">=</span> <span class="n">modelo_cuadratico</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_cuadratico</span><span class="p">,</span> <span class="n">y_cuadratico</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">train_loss</span> <span class="o">=</span> <span class="n">modelo_cuadratico_ajustado</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Los primeros resultados del modelo sin Early stop son&quot;</span><span class="p">,</span> <span class="n">train_loss</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">])</span>
+
+<span class="c1">#Método 2</span>
+<span class="n">modelo_cuadratico_ajustado_stopping</span> <span class="o">=</span> <span class="n">modelo_cuadratico</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_cuadratico</span><span class="p">,</span> <span class="n">y_cuadratico</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">])</span>
+<span class="n">train_loss_stopping</span> <span class="o">=</span> <span class="n">modelo_cuadratico_ajustado_stopping</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El número de épocas enconstradas cuando el cambio se vuelve mínimo es&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loss_stopping</span><span class="p">),</span> <span class="s2">&quot;Sus resultados son&quot;</span><span class="p">,</span> <span class="n">train_loss_stopping</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">train_loss_stopping</span><span class="p">)])</span>
+
+<span class="n">graficas</span><span class="p">(</span><span class="n">train_loss</span> <span class="o">=</span> <span class="n">train_loss</span><span class="p">,</span> <span class="n">train_loss_stopping</span> <span class="o">=</span> <span class="n">train_loss_stopping</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Los primeros resultados del modelo sin Early stop son [4179.4365234375, 504.81634521484375, 171.07740783691406, 140.1544189453125, 136.68502807617188, 135.71102905273438, 134.9700927734375, 134.2571563720703, 133.5535430908203, 132.8574981689453, 132.16879272460938, 131.4873046875, 130.81301879882812, 130.14578247070312, 129.485595703125, 128.83236694335938, 128.1859893798828, 127.5463638305664, 126.91352844238281, 126.2873306274414, 125.66767883300781, 125.0545883178711, 124.44792175292969, 123.84761810302734, 123.253662109375, 122.66593933105469, 122.0843734741211, 121.50894927978516, 120.9395980834961, 120.37617492675781, 119.81871032714844, 119.26708984375, 118.72125244140625, 118.18119812011719, 117.6468276977539, 117.11802673339844, 116.59481048583984, 116.07711029052734, 115.56486511230469, 115.0579605102539, 114.556396484375, 114.06011962890625, 113.56905364990234, 113.0831527709961, 112.60237121582031, 112.12662506103516, 111.6559066772461, 111.19010925292969, 110.7292251586914, 110.273193359375]
+El número de épocas enconstradas cuando el cambio se vuelve mínimo es 10 Sus resultados son [67.35860443115234, 67.35859680175781, 67.35858917236328, 67.35857391357422, 67.3585433959961, 67.35853576660156, 67.35850524902344, 67.35847473144531, 67.35847473144531, 67.35843658447266]
+</pre></div>
+</div>
+<img alt="../_images/01910fd12e001d19b271d998fc8e692c96df1fc7704bb71aca52c39aaf86ecf4.png" src="../_images/01910fd12e001d19b271d998fc8e692c96df1fc7704bb71aca52c39aaf86ecf4.png" />
+</div>
+</div>
+<p style = "font-family: 'OPTIMA', serif;">
+Siguiendo esta estructura, si se realiza la comprobación de manera visual, se definiría un número óptimo de épocas de 300, de manera que no sería necesario recorrer toda la variación del desarrollo.
+<br>
+En el segundo caso, utilizando el método de "Early Stopping", se observa que se requiere un número de épocas mucho menor, de 23, lo que destaca que, de manera numérica, se pueden alcanzar mejores valores. Observando los resultados de la pérdida, se nota que en la primera iteración del primer caso la reducción es mucho mayor. Esto subraya que los modelos, al iniciar con valores aleatorios, pueden necesitar diferentes números de épocas e iteraciones.
+</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Método 1</span>
+<span class="n">modelo_circular_ajustado</span> <span class="o">=</span> <span class="n">modelo_circular</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_circular</span><span class="p">,</span> <span class="n">y_circular</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">train_loss</span> <span class="o">=</span> <span class="n">modelo_circular_ajustado</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Los primeros resultados del modelo sin Early stop son&quot;</span><span class="p">,</span> <span class="n">train_loss</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">])</span>
+
+<span class="c1">#Método 2</span>
+<span class="n">modelo_circular_ajustado_stopping</span> <span class="o">=</span> <span class="n">modelo_circular</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_cuadratico</span><span class="p">,</span> <span class="n">y_cuadratico</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">])</span>
+<span class="n">train_loss_stopping</span> <span class="o">=</span> <span class="n">modelo_circular_ajustado_stopping</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El número de épocas enconstradas cuando el cambio se vuelve mínimo es&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loss_stopping</span><span class="p">),</span> <span class="s2">&quot;Sus resultados son&quot;</span><span class="p">,</span> <span class="n">train_loss_stopping</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">train_loss_stopping</span><span class="p">)])</span>
+
+<span class="n">graficas</span><span class="p">(</span><span class="n">train_loss</span> <span class="o">=</span> <span class="n">train_loss</span><span class="p">,</span> <span class="n">train_loss_stopping</span> <span class="o">=</span> <span class="n">train_loss_stopping</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Los primeros resultados del modelo sin Early stop son [44.80907440185547, 29.78348731994629, 21.61324119567871, 17.170618057250977, 14.754907608032227, 13.441337585449219, 12.72706413269043, 12.33866024017334, 12.12745189666748, 12.012591361999512, 11.95012378692627, 11.916144371032715, 11.89765739440918, 11.887593269348145, 11.882109642028809, 11.879117012023926, 11.877481460571289, 11.876581192016602, 11.876083374023438, 11.875802993774414, 11.875642776489258, 11.875547409057617, 11.875487327575684, 11.875448226928711, 11.875419616699219, 11.875394821166992, 11.87537670135498, 11.875360488891602, 11.875346183776855, 11.87533187866211, 11.87531852722168, 11.87530517578125, 11.875292778015137, 11.87528133392334, 11.87527084350586, 11.875259399414062, 11.875249862670898, 11.875239372253418, 11.87523078918457, 11.875221252441406, 11.875212669372559, 11.875204086303711, 11.87519645690918, 11.875188827514648, 11.875181198120117, 11.875173568725586, 11.875166893005371, 11.875161170959473, 11.875154495239258, 11.875147819519043]
+El número de épocas enconstradas cuando el cambio se vuelve mínimo es 10 Sus resultados son [4920.82177734375, 573.1071166992188, 178.34866333007812, 141.88375854492188, 137.90078735351562, 136.8690948486328, 136.1119384765625, 135.3866424560547, 134.6710662841797, 133.96328735351562]
+</pre></div>
+</div>
+<img alt="../_images/bd2a743f1980d047451ddb4bd910db54808eeac02ccbeae8cfabc7da147d8bb6.png" src="../_images/bd2a743f1980d047451ddb4bd910db54808eeac02ccbeae8cfabc7da147d8bb6.png" />
+</div>
+</div>
+<p style = "font-family: 'OPTIMA', serif;">
+En este caso, el aprendizaje sigue una tendencia similar a los resultados anteriores, destacando que, en un rango de 20 épocas, la variación de la pérdida es mínima. La comprobación visual en los tres casos ha mostrado que no se necesitan las 400 épocas para ajustar el modelo, posiblemente porque las funciones son poco complejas y no se dispone de muchos datos.
+<br>
+En el segundo caso, se determina que el número de épocas óptimo es 15, lo que indica que se necesitan pocas iteraciones para encontrar un buen ajuste. Este número resulta ser mucho menor que el identificado de manera visual en todos los casos.
+</p><li style = "font-family: 'OPTIMA', serif; font-size:16px;">
+¿Cómo se puede determinar el número óptimo de épocas?
+</li>
+<p style = "font-family: 'OPTIMA', serif;">
+Para encontrar el número óptimo de épocas, el indicador principal es observar cómo se relaciona la pérdida de la función con el número de épocas del modelo. Específicamente, se busca identificar un punto en el que aumentar el número de épocas no resulte en una reducción significativa de la pérdida del modelo. Este método se puede aplicar de dos formas:
+<br>
+<b>Comprobación visual</b>: Consiste en graficar la curva de aprendizaje de la red para el conjunto de entrenamiento, y opcionalmente para el conjunto de validación. A partir de esta gráfica, se identifica un punto en el que la curva de aprendizaje se aplana, lo que indica que el cambio en la pérdida es mínimo.
+<br>
+<b>Early Stopping</b>: Este método presenta la ventaja de permitir un análisis numérico durante el entrenamiento de la red. Consiste en verificar que, en cada cambio o secuencia de cambios (paciencia) de épocas, la pérdida se reduzca al menos un valor mínimo establecido. Si la reducción no cumple con este umbral, se detienen las iteraciones y la creación de nuevas épocas. Por ejemplo, se puede determinar que cuando la reducción de la pérdida entre épocas sea menor a 0.001, se detenga el entrenamiento. También es posible restablecer los pesos a los valores correspondientes al mejor desempeño del modelo.
+<br>
+El ajuste de estos parametros se suele hacer tomando en cuenta el conjunto de validación de los datos para evaluar la perdida de la red conforme a las iteraciones, en estos ejercicios no se realizó esta práctica dada la poca cantidad de datos establecidos.
+</p><li style = "font-family: 'OPTIMA', serif; font-size:16px;">
+¿Cómo cambia el error de entrenamiento con el aumento de las épocas?
+</li>
+<p style = "font-family: 'OPTIMA', serif; ">
+Existe una relación crucial entre el número de épocas y la pérdida durante el entrenamiento, lo que permite determinar el número óptimo de épocas. A medida que aumenta el número de épocas, la red tiene más oportunidades para ajustar sus pesos y revisar los datos, lo que generalmente contribuye a reducir el error en el aprendizaje. Sin embargo, es importante encontrar un equilibrio, ya que en algunos casos, después de un cierto número de épocas, el error del modelo puede comenzar a incrementarse nuevamente. Por lo tanto, el punto óptimo se encuentra generalmente en un mínimo donde la pérdida ha disminuido y está cerca de volver a aumentar.
+</p>
+<p style = "font-family: 'OPTIMA', serif; ">Baeldung. (2023, March 16). <i>Epoch in Neural Networks</i>.Recuperado de <a href="https://www.baeldung.com/cs/epoch-neural-networks">https://www.baeldung.com/cs/epoch-neural-networks</a></p>
+<h3 style = "font-family: 'OPTIMA', serif;"> <b>Punto 3: Arquitectura del Modelo </b></h3>
+<li style = "font-family: 'OPTIMA', serif; font-size:16px;">
+¿Es posible ajustar datos circulares con una red neuronal de una sola capa y una neurona? ¿Por qué o por qué no?
+</li>
+<p style = "font-family: 'OPTIMA', serif; ">No es posible ajustar datos de patrones circulares en una red neuronal con tan solo una neurona. Esto se debe a que cada neurona en una red neuronal está compuesta por pesos que se actualizan y determinan a través de una función lineal, como en el caso del perceptrón. La función que describe una neurona se puede expresar como: <code>y = Wx + b</code></p>
+<p style = "font-family: 'OPTIMA', serif; ">donde <code>W</code> representa los pesos y <code>b</code> es el sesgo. Dado que esta función es lineal, no es capaz de modelar adecuadamente datos que sigan un patrón circular o no lineal. Para capturar la complejidad de estos datos, se necesita una estructura de red más compleja con múltiples capas y neuronas, que permita la transformación no lineal de los datos.</p>
+<p style = "font-family: 'OPTIMA', serif; ">Para capturar patrones más complejos, como los circulares, se requiere una red neuronal con múltiples capas. Estas redes pueden usar funciones de activación no lineales y múltiples capas de neuronas para transformar los datos de manera no lineal, de esta manera se pueden modelar relaciones como la circular en este caso.</p>
+<p style="font-family: 'OPTIMA', serif;">The Modern Scientist. (2024. Enero.). <i>Unlocking Complexities: The Role of Nonlinear Relationships and Hidden Layers in Neural Networks</i>. Recuperado de: <a href="https://medium.com/the-modern-scientist/unlocking-complexities-the-role-of-nonlinear-relationships-and-hidden-layers-in-neural-networks-fca9631fd2fd">https://medium.com/the-modern-scientist/unlocking-complexities-the-role-of-nonlinear-relationships-and-hidden-layers-in-neural-networks-fca9631fd2fd</a></p>
+<h3 style = "font-family: 'OPTIMA', serif;"> <b>Punto 4: Función de Activación </b></h3>
+<li style = "font-family: 'OPTIMA', serif; font-size:16px;">
+¿Qué sucede si cambiamos la función de activación a ReLU o sigmoide para los datos parabólicos y circulares?
+</li><h5 style = "font-family: 'OPTIMA', serif;"> Datos Cuadraticos </h5><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo_cuadratico</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+<span class="n">modelo_cuadratico</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+<span class="n">modelo_cuadratico</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_cuadratico</span><span class="p">,</span> <span class="n">y_cuadratico</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 82ms/step - loss: 4930.7744
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 85ms/step - loss: 4930.7744
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 2/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 574.0232
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 574.0232
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 3/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 178.4458
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 178.4458
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 4/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 141.9064
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 141.9064
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 5/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 137.9166
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 137.9166
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 6/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 136.8841
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 136.8841
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 7/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 136.1267
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 136.1267
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 8/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 135.4012
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 135.4012
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 9/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 134.6855
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 134.6855
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 10/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 133.9776
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 133.9776
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.src.callbacks.history.History at 0x14925e890&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo_cuadratico_relu</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)])</span>
+<span class="n">modelo_cuadratico_relu</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">modelo_cuadratico_relu</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_cuadratico</span><span class="p">,</span> <span class="n">y_cuadratico</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">])</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tiempo total de entrenamiento: </span><span class="si">{</span><span class="n">end_time</span><span class="o">-</span><span class="n">start_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> segundos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 81ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 83ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 2/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 3/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4920.8223
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 4920.8223
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 4/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 5/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 6/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4920.8223
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4920.8223
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 7/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 8/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 9/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4920.8218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 10/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4920.8223
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4920.8223
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo total de entrenamiento: 0.20 segundos
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo_cuadratico_sigmoid</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)])</span>
+<span class="n">modelo_cuadratico_sigmoid</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">modelo_cuadratico_sigmoid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_cuadratico</span><span class="p">,</span> <span class="n">y_cuadratico</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">])</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tiempo total de entrenamiento: </span><span class="si">{</span><span class="n">end_time</span><span class="o">-</span><span class="n">start_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> segundos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 80ms/step - loss: 4811.7324
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 82ms/step - loss: 4811.7324
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 2/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4811.7295
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 4811.7295
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 3/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4811.7266
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 4811.7266
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 4/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4811.7236
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 4811.7236
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 5/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4811.7212
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 12ms/step - loss: 4811.7212
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 6/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4811.7178
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 4811.7178
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 7/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4811.7158
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 4811.7158
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 8/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4811.7134
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 4811.7134
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 9/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 4811.7104
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 4811.7104
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 10/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 4811.7080
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 4811.7080
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo total de entrenamiento: 0.21 segundos
+</pre></div>
+</div>
+</div>
+</div>
+<p style = "font-family: 'OPTIMA', serif; ">
+La función de activación ReLU o Sigmoid determina si los pesos que ingresan a la neurona la activarán para la transmisión de datos. La función ReLU activa de forma lineal todos los valores de entrada mayores a cero, mientras que la función Sigmoid tiende a saturarse con valores negativos. En el caso de los datos parabólicos, se puede observar que con ambas funciones de activación, el aprendizaje de la red se mantuvo constante, ya que no hubo gran variación en las pérdidas por cada iteración.
+</p><h5 style = "font-family: 'OPTIMA', serif;"> Datos Circulares </h5><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo_circular</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+<span class="n">modelo_circular</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+<span class="n">modelo_circular</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_circular</span><span class="p">,</span> <span class="n">y_circular</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 79ms/step - loss: 33.4442
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 81ms/step - loss: 33.4442
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 2/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 23.6037
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 23.6037
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 3/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 18.2528
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 18.2528
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 4/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 15.3432
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 15.3432
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 5/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 13.7611
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 13.7611
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 6/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.9008
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 12.9008
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 7/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.4330
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.4330
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 8/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.1787
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 12.1787
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 9/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.0403
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 12.0403
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 10/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 11.9651
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 11.9651
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.src.callbacks.history.History at 0x149627610&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo_circular_relu</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)])</span>
+<span class="n">modelo_circular_relu</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">modelo_circular_relu</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_circular</span><span class="p">,</span> <span class="n">y_circular</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">])</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tiempo total de entrenamiento: </span><span class="si">{</span><span class="n">end_time</span><span class="o">-</span><span class="n">start_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> segundos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 80ms/step - loss: 20.0260
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 82ms/step - loss: 20.0260
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 2/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 18.0960
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 18.0960
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 3/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 16.6235
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 16.6235
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 4/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 15.5000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 15.5000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 5/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 14.6428
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 14.6428
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 6/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 13.9888
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 13.9888
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 7/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 13.4899
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 13.4899
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 8/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 13.1092
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 13.1092
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 9/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.8187
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.8187
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 10/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.5970
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.5970
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo total de entrenamiento: 0.20 segundos
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo_circular_sigmoid</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)])</span>
+<span class="n">modelo_circular_sigmoid</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">modelo_circular_sigmoid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_circular</span><span class="p">,</span> <span class="n">y_circular</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">])</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tiempo total de entrenamiento: </span><span class="si">{</span><span class="n">end_time</span><span class="o">-</span><span class="n">start_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> segundos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 83ms/step - loss: 12.3034
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 84ms/step - loss: 12.3034
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 2/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.3034
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 12.3034
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 3/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.3033
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 11ms/step - loss: 12.3033
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 4/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.3033
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.3033
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 5/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.3033
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.3033
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 6/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.3032
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 12ms/step - loss: 12.3032
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 7/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.3032
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.3032
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 8/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.3031
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.3031
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 9/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.3031
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.3031
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 10/1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 9ms/step - loss: 12.3031
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<span class=" -Color -Color-Bold">1/1</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 10ms/step - loss: 12.3031
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo total de entrenamiento: 0.21 segundos
+</pre></div>
+</div>
+</div>
+</div>
+<p style = "font-family: 'OPTIMA', serif;">
+Cuando se tienen datos circulares, en las primeras iteraciones el error del modelo es mucho mayor si no se utiliza una función de activación como ReLU o Sigmoid. Además, como en el caso anterior, la pérdida se mantiene muy similar en las iteraciones, por lo que no se observa una disminución considerable.
+</p>
+<p style = "font-family: 'OPTIMA', serif;">Codificando Bits. (2024). <i>La FUNCIÓN DE ACTIVACIÓN</i>. YouTube. Recuperado de, <a href="https://www.youtube.com/watch?v=lFODTDO8mMw">https://www.youtube.com/watch?v=lFODTDO8mMw</a></p>
+<li style = "font-family: 'OPTIMA', serif; font-size:16px;">
+¿Cómo afecta esto al ajuste y la convergencia del modelo?
+</li>
+<p style = "font-family: 'OPTIMA', serif;">
+La velocidad de convergencia de un modelo puede variar según la función de activación utilizada. Por ejemplo, ReLU (Rectified Linear Unit) permite una convergencia más rápida debido a su naturaleza lineal para valores positivos, lo que facilita la propagación de gradientes. En contraste, la función Sigmoide, aunque útil para problemas de clasificación, puede ralentizar el entrenamiento ya que tiende a saturarse, produciendo gradientes muy pequeños que hacen el aprendizaje más lento. Por tanto, la elección de la función de activación es crucial para un ajuste eficiente del modelo.
+</p><h3 style = "font-family: 'OPTIMA', serif;"> <b>Punto 5: Generalizar </b></h3><li style = "font-family: 'OPTIMA', serif; font-size:16px;">
+¿Cómo se puede evaluar la capacidad del modelo para generalizar a nuevos datos?
+</li>
+<p style = "font-family: 'OPTIMA', serif; ">
+En modelos supervisados, existen diversas técnicas para asegurar una buena generalización y un aprendizaje efectivo en datos nuevos. En el caso de las redes neuronales, debido a su tendencia a sobreajustar los datos de entrenamiento, se aplican técnicas específicas para abordar este problema. Una de las estrategias básicas consiste en dividir los datos en conjuntos de entrenamiento y prueba, lo cual permite evaluar el desempeño del modelo con datos que no ha visto antes. Esta práctica se fortalece mediante el uso de la validación cruzada, que proporciona diferentes subconjuntos de datos al modelo para probar su rendimiento de manera más robusta.
+</p><li style = "font-family: 'OPTIMA', serif; font-size:16px;">
+¿Qué técnicas se pueden usar para evitar el sobreajuste?
+</li>
+<p style = "font-family: 'OPTIMA', serif;">
+odría ser útil agregar datos al modelo con un poco de ruido que no siga el comportamiento del conjunto de datos original. Esto ayuda al modelo a aprender sobre aspectos irregulares y puede prevenir el sobreajuste durante la validación. Además de la validación cruzada mencionada anteriormente, se pueden emplear técnicas de regularización como L1 (Lasso), L2 (Ridge) o una combinación de ambas. Estas técnicas añaden una penalización o costo adicional para reducir la magnitud de los coeficientes, ayudando a mejorar la capacidad del modelo para generalizar en datos nuevos. En el caso de L1 el término de la penzalización se hace con base en el valor absoluto de la suma de los coeficientes esto hace que ciertos valores puedan ser iguales a 0 y una reducción muhco mayor en características. Mientras que en el caso de la regularización L2 esta se hace con la suma de los cuadrados de los coeficientes en donde si bien se reducen los valores de los coeficientes, no necesariemente llegan a 0 lo cual es bueno para evitar un sobreajuste de manera menos radical. La elección de cuál caso se usa va de acuerdo a la elección del modelo.
+</p>
+<p style = "font-family: 'OPTIMA', serif;">Turing. (2024). <i>A Guide to Making Deep Learning Models Generalize Better</i>.Recuperado de, <a href="https://www.turing.com/kb/making-deep-learning-models-generalize-better">https://www.turing.com/kb/making-deep-learning-models-generalize-better</a></p>
+<p style="font-family: 'OPTIMA', serif;">Ramírez Sosa, G. (n.d.). <i>Entendiendo la Regularización L1 y L2: Dominando el Enfoque de Regularización en Machine Learning</i>. Recuperado de, <a href="https://www.linkedin.com/pulse/entendiendo-la-regularización-l1-y-l2-dominando-el-en-ramirez-sosa-gyvee/">https://www.linkedin.com/pulse/entendiendo-la-regularización-l1-y-l2-dominando-el-en-ramirez-sosa-gyvee/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo_lineal</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l1</span><span class="p">(</span><span class="mf">0.01</span><span class="p">))])</span>
+<span class="n">modelo_lineal</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+
+<span class="n">modelo_cuadratico</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l1</span><span class="p">(</span><span class="mf">0.01</span><span class="p">))])</span>
+<span class="n">modelo_cuadratico</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+
+<span class="n">modelo_circular</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l1</span><span class="p">(</span><span class="mf">0.01</span><span class="p">))])</span>
+<span class="n">modelo_circular</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Miguel Feles
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
