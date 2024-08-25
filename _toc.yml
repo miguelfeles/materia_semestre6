@@ -1,0 +1,8 @@
+format: jb-book
+root: content/chapter1
+
+chapters:
+  - file: content/hola
+    title: "Capítulo 1: Introducción"
+  - file: content/Laboratorio1_miguelfeles
+    title: "Laboratorio 1: Análisis de Datos"
