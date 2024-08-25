@@ -1,0 +1,24 @@
+# _config.yml
+
+# General book settings
+title: "DeepLearning"
+author: "Miguel Feles"
+logo: "images/logo.png"  # Ruta al logo del libro (opcional)
+language: "es"  # Idioma del libro
+
+# URL base del sitio (útil para GitHub Pages)
+repository:
+  url: "https://github.com/miguelfeles/materia_deeplearning"
+  path_to_book: "DeepLearning/"
+
+# Configuraciones del tema
+html:
+  favicon: "images/favicon.ico"  # Ruta al favicon (opcional)
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: true
+
+# Extensiones de Jupyter Book
+sphinx:
+  extra_extensions:
+    - myst_nb  # Para soportar Jupyter Notebooks
